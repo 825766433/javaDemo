@@ -13,6 +13,7 @@ public class RunTest {
         SpellChecker spellChecker = new SpellChecker(new XinhuaLexicon());
         System.out.println(spellChecker.isValid(""));
 
+
         SpellChecker spellChecker1 = new SpellChecker(new XinhuaLexicon(),new UserWork());
         spellChecker1.whoUse();
 
