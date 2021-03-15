@@ -15,7 +15,7 @@ public class AndroidPhone implements Phone {
 
     @Override
     public void pay() {
-        System.out.println("用安卓手机支付");
+        System.out.println("用安卓手机支付111");
     }
 
     @Override
