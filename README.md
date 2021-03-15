@@ -28,3 +28,6 @@ javaBeans模式-effectiveJava.manyConstructorUseStructure.javaBeansConstructor
 -effectiveJava.dependencyInjection
 一句话:本来我接受各种参数来构造一个对象，现在只接受一个参数——已经实例化的对象。
 -三种注入方式-effectiveJava.dependencyInjection.threeMethod
+
+第6条：避免创建不必要的对象
+有些创建实例的成本很高,引入有限状态机(finite state machine)来重复使用相关对象-effectiveJava.avoidCreateObject.FiniteStateMachineDemo
