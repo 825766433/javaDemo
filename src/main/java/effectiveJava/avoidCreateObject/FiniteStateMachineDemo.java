@@ -10,11 +10,6 @@ import java.util.regex.Pattern;
  **/
 public class FiniteStateMachineDemo {
 
-    public static void main(String[] args) {
-
-
-    }
-
     /**
      * public boolean matches(String regex) {
      *         return Pattern.matches(regex, this);
@@ -36,5 +31,7 @@ public class FiniteStateMachineDemo {
     static boolean isRomanNumeral(String str){
         return ROMAN.matcher(str).matches();
     }
+
+
 
 }

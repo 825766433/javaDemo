@@ -1,7 +1,5 @@
 package effectiveJava.staticMethodReplaceConstructor.returnByParamChange;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 /**
  * @ClassName RunTest
  * @Author licongcong

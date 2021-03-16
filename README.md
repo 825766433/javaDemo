@@ -31,3 +31,4 @@ javaBeans模式-effectiveJava.manyConstructorUseStructure.javaBeansConstructor
 
 第6条：避免创建不必要的对象
 有些创建实例的成本很高,引入有限状态机(finite state machine)来重复使用相关对象-effectiveJava.avoidCreateObject.FiniteStateMachineDemo
+要优先使用基类型而不是装箱基本类型，要当心无意识的自动装箱-effectiveJava.avoidCreateObject.autoBoxingDemo.Demo
