@@ -32,3 +32,9 @@ javaBeans模式-effectiveJava.manyConstructorUseStructure.javaBeansConstructor
 第6条：避免创建不必要的对象
 有些创建实例的成本很高,引入有限状态机(finite state machine)来重复使用相关对象-effectiveJava.avoidCreateObject.FiniteStateMachineDemo
 要优先使用基类型而不是装箱基本类型，要当心无意识的自动装箱-effectiveJava.avoidCreateObject.autoBoxingDemo.Demo
+
+第7条:消除过期的对象引用
+只要类是自己管理内存，程序员就应该警惕内存泄漏问题-effectiveJava.clearExpiredObjectImport.StackDemo
+内存泄漏的另一个常见来源是缓存-effectiveJava.clearExpiredObjectImport.cacheLeakage.CacheMapDemo
+内存泄漏的第三个常见来源是监昕器和其他回调
+
