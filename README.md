@@ -38,3 +38,10 @@ javaBeans模式-effectiveJava.manyConstructorUseStructure.javaBeansConstructor
 内存泄漏的另一个常见来源是缓存-effectiveJava.clearExpiredObjectImport.cacheLeakage.CacheMapDemo
 内存泄漏的第三个常见来源是监昕器和其他回调
 
+第8条:避免使用终结方法和清除方法
+GC存在风险,可能不在预定时间内执行,导致对象无法进行清理-effectiveJava.avoidUseFinalizerAndClear
+原因:1>不能保证会被及时执行,根本就不保证它们会被执行(和不同的JVM有关)
+原因:2>性能缺失,终结方法阻止了有效的垃圾回收,清除方法稍微快一点,try-with-resource,正常GC-12ns,cleaner-66ns,finalize-550ns
+原因:3>安全问题,终结方法攻击(finalizer attack),
+    解决方案:1>SensitiveOperation为final类
+            2>SensitiveOperation.finalize()定义为final
