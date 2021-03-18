@@ -45,3 +45,8 @@ GC存在风险,可能不在预定时间内执行,导致对象无法进行清理-
 原因:3>安全问题,终结方法攻击(finalizer attack),
     解决方案:1>SensitiveOperation为final类
             2>SensitiveOperation.finalize()定义为final
+
+第9条:try-with-resources优先于try-finally
+-effectiveJava.tryWithResources
+在处理必须关闭的资源时，始终要优先考虑用try-with-resources，面不是用 try-finally。这样得到的代码将更加简洁、清晰，产生的异常也更有价值。
+有了 try-with-resources语句，在使用必须关闭的资源时，就能更轻松地正确编写代码了。实践证明这个用try-finally是不可能做到的。
