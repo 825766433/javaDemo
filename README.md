@@ -56,3 +56,8 @@ GC存在风险,可能不在预定时间内执行,导致对象无法进行清理-
 类没有必要提供"逻辑相等"(logical equality)的测试功能
 超类已经覆盖了equals,超类的行为对于这个类也是合适的
 类是私有的,或者包级私有的,可以确定它的equals方法永远不会被调用-???什么玩意儿,没看懂,为什么?
+equals等价关系,属性:自反性,对称性,传递性,一致性
+自反性:x.equals(x)=true
+对称性:x.equals(y)=true,必须,y.equals(a)=true
+传递性:x.equals(y)=true,y.equals(z)=true,必须x.equals(z)=true
+一致性:x,y没有被修改,多次调用x.equals(y)=true,必须一直成立
