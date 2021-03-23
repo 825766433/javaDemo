@@ -61,3 +61,4 @@ equals等价关系,属性:自反性,对称性,传递性,一致性
 对称性:x.equals(y)=true,必须,y.equals(a)=true
 传递性:x.equals(y)=true,y.equals(z)=true,必须x.equals(z)=true
 一致性:x,y没有被修改,多次调用x.equals(y)=true,必须一直成立
+非空性:参数不能为null,否则,nullpointException
