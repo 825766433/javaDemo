@@ -78,3 +78,5 @@ double   hashCode=(int)(1^(1>>>32))
 普通引用类型    hashCode=f.hashCode()`
 将计算出的每个Filed的hashCode值相加返回，为了避免直接相加产生的偶然相等（单个不相等，加起来就相等了），为每个Filed乘以一个质数后再相加，例如有：
 return  f1.hashCode()*17+(int)f2.13
+
+第12条:始终要覆盖toString-effectiveJava.overRideToString.PhoneNumber
