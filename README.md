@@ -62,3 +62,19 @@ equals等价关系,属性:自反性,对称性,传递性,一致性
 传递性:x.equals(y)=true,y.equals(z)=true,必须x.equals(z)=true
 一致性:x,y没有被修改,多次调用x.equals(y)=true,必须一直成立
 非空性:参数不能为null,否则,nullpointException
+
+第11条:覆盖equals时总覆盖hashCode
+重写hashCode()的原则-https://blog.csdn.net/u013679744/article/details/57074669/
+    （1）同一个对象多次调用hashCode()方法应该返回相同的值；
+    （2）当两个对象通过equals()方法比较返回true时，这两个对象的hashCode()应该返回相等的（int）值；
+    （3）对象中用作equals()方法比较标准的Filed(成员变量（类属性）)，都应该用来计算hashCode值。
+计算hashCode值的方法
+` ````//f是Filed属性
+boolean    hashCode=(f?0:1)
+(byte,short,char,int)      hashCode=(int)f
+long       hashCode=(int)(f^(f>>>32))
+float       hashCode=Float.floatToIntBits(f)
+double   hashCode=(int)(1^(1>>>32))
+普通引用类型    hashCode=f.hashCode()`
+将计算出的每个Filed的hashCode值相加返回，为了避免直接相加产生的偶然相等（单个不相等，加起来就相等了），为每个Filed乘以一个质数后再相加，例如有：
+return  f1.hashCode()*17+(int)f2.13
