@@ -1,5 +1,7 @@
 package effectiveJava.cautiousUseClone;
 
+import java.util.Objects;
+
 /**
  * @ClassName Demo
  * @Author licongcong
@@ -12,8 +14,8 @@ public class Demo implements Cloneable {
     private String momo;
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    protected Object clone()  {
+        return new Demo();
     }
 
     public String getId() {

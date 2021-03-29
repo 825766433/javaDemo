@@ -1,10 +1,17 @@
-package effectiveJava.overRideToString;
+package effectiveJava.cautiousUseClone;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public final class PhoneNumber {
+/**
+ * @Description 不可变类永远都不应该提供clone方法
+ * @Author lcc 
+ * @UpdateDate 2021/3/26 17:19
+ * @Param 
+ * @Return 
+ */
+public final class PhoneNumber implements Cloneable {
     private final short areaCode, prefix, lineNum;
 
     public PhoneNumber(int areaCode, int prefix, int lineNum) {
@@ -20,7 +27,8 @@ public final class PhoneNumber {
         return (short) val;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (o == this) {
             return true;
         }
@@ -32,12 +40,14 @@ public final class PhoneNumber {
                 && pn.areaCode == areaCode;
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         int result = Short.hashCode(areaCode);
         result = 31 * result + Short.hashCode(prefix);
         result = 31 * result + Short.hashCode(lineNum);
         return result;
     }
+
 
     /**
      * Returns the string representation of this phone number.
@@ -51,13 +61,29 @@ public final class PhoneNumber {
      * For example, if the value of the line number is 123, the last
      * four characters of the string representation will be "0123".
      */
-//    @Override public String toString() {
-//        return String.format("%03d-%03d-%04d",
-//                areaCode, prefix, lineNum);
-//    }
+    @Override
+    public String toString() {
+        return String.format("%03d-%03d-%04d",
+                areaCode, prefix, lineNum);
+    }
+
+    @Override
+    public PhoneNumber clone() {
+        try {
+            return (PhoneNumber) super.clone();
+        } catch (CloneNotSupportedException e) {
+            // Can't happen
+            throw new AssertionError();
+        }
+    }
 
     public static void main(String[] args) {
-        PhoneNumber jenny = new PhoneNumber(707, 867, 5309);
-        System.out.println("Jenny's number: " + jenny);
+        PhoneNumber pn = new PhoneNumber(707, 867, 5309);
+        Map<PhoneNumber, String> m = new HashMap<>(16);
+        m.put(pn, "Jenny");
+        System.out.println(m.get(pn.clone()));
+        System.out.println(m.get(pn));
+        System.out.println(pn.clone().hashCode());
+        System.out.println(pn.hashCode());
     }
 }

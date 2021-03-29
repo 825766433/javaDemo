@@ -80,3 +80,9 @@ double   hashCode=(int)(1^(1>>>32))
 return  f1.hashCode()*17+(int)f2.13
 
 第12条:始终要覆盖toString-effectiveJava.overRideToString.PhoneNumber
+
+第13条:谨慎地覆盖clone
+不可变类永远都不应该提供clone方法-effectiveJava.cautiousUseClone.PhoneNumber
+如果对象中包含的域引用了可变的对象,使用PhoneNumber这种简单的clone实现可能会导致灾难性后果-effectiveJava.cautiousUseClone.StackRun
+对象拷贝的更好的方法是提供一个拷贝构造器(copy Contructor)或拷贝工厂(copy factory)-effectiveJava.cautiousUseClone.copyContructor
+总之,复制功能最好由构造器或者工厂提供,这条规则最绝对的例外是输组,最好利用clone方法复制输组-effectiveJava.cautiousUseClone.Stack
