@@ -15,7 +15,7 @@ public class DateUtils implements Runnable {
     private static ThreadLocal<SimpleDateFormat> sdf = new ThreadLocal<SimpleDateFormat>(){
         @Override
         protected SimpleDateFormat initialValue() {
-            System.out.println("aaa");
+            System.out.println("aaa");;
             return null;
         }
     };
